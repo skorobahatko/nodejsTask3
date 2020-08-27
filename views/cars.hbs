@@ -8,20 +8,25 @@
     <title>Document</title>
 </head>
 <body>
+<form action="/api/cars/search" method="post">
+    <input type="text" name="search">
+    <button type="submit">search</button>
+</form>
 
-all cars is working!!!!
+{{#if arr}}
+    {{#each arr}}
+        <div style="border-top: 2px solid black">
+            {{this.brand}}
+            {{this.engine}}
+        </div>
+    {{/each}}
+{{/if}}
 
-{{#if oneCar}}
-    <hr>
-    brand : {{this.oneCar.brand}}
-    <hr>
-    engine : {{this.oneCar.engine}}
-    <hr>
-     year : {{this.oneCar.year}}
-{{/if}}
-{{#if noResult}}
-    {{this.noResult}}
-{{/if}}
+<a href="/api/cars/new">
+    <button>
+        add new car
+    </button>
+</a>
 
 </body>
 </html>

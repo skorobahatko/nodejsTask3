@@ -6,14 +6,20 @@ module.exports = {
     getAll: () => {
         return carsArr;
     },
-    getByName: (brand) => {
+    getByName: (search) => {
+        console.log (search)
         let result = carsArr.find(item => {
-            if (item.brand.toLowerCase() === brand) {
+            console.log (item.brand.toLowerCase());
+            if (item.brand.toLowerCase() === search) {
              return item;
             }
         });
         console.log ('RESULT!!!')
         console.log (result);
         return result;
+    },
+    createNew: (request) => {
+        carsArr.push(request);
+        return carsArr;
     }
 };

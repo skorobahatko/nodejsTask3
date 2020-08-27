@@ -16,9 +16,7 @@ app.engine('.hbs', exHand({
 app.set('views', path.join(process.cwd(), 'views'));
 
 console.log ('app use 00000000');
-// app.get('/cars', (req, res) => {
-//     res.render('cars');
-// })
+
 app.use('/api', apiRouter.apiRouter);
 
 app.listen(8080, (err) => {

@@ -18,6 +18,12 @@
         <div style="border-top: 2px solid black">
             {{this.brand}}
             {{this.engine}}
+            <a href="/api/cars/update/{{this.brand}}">
+                <button> update </button>
+            </a>
+            <a href="/api/cars/delete/{{this.brand}}">
+                <button> delete </button>
+            </a>
         </div>
     {{/each}}
 {{/if}}

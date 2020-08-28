@@ -12,6 +12,6 @@ carsRouter.post('/update', controller.updateCar);
 carsRouter.get('/new', controller.newCar);
 // carsRouter.delete('/:brand', controller.deleteCar);
 // carsRouter.post('/:brand', controller.deleteCar);
-carsRouter.get('/delete/:brand', controller.linkToDelete);
+carsRouter.post('/delete', controller.linkToDelete);
 
 module.exports = carsRouter;

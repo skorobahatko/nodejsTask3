@@ -26,18 +26,18 @@ module.exports = {
     },
     findUpdatedCar: (req, res) => {
         const updatedCar = carsService.findCarToUpdate(req.params.brand);
+        console.log ('UPDATED CAR')
         console.log (updatedCar);
         res.render('update-car', {oldCar: updatedCar});
     },
     updateCar: (req, res) => {
-        // console.log ('PARAMS');
-        // console.log (req.params);
         console.log ('BODY');
-        console.log (req.params);
-        // const updatedCar = req.body;
-        // const updatedArrayCars = carsService.updateCar(updatedCar);
-        // console.log ('updatedArrayCars');
-        // console.log (updatedArrayCars)
+        console.log (req.body);
+        const updatedCar = req.body;
+        const updatedArrayCars = carsService.updateCar(updatedCar);
+        console.log ('updatedArrayCars');
+        console.log (updatedArrayCars);
+        res.render('cars', {arr: updatedArrayCars});
     },
     // deleteCar: (req, res) => {
     //     console.log ('delete')
@@ -46,9 +46,9 @@ module.exports = {
     // },
     linkToDelete: (req, res) => {
         console.log ('carToDelete');
-        const carToDelete = req.params;
+        const carToDelete = req.body;
         console.log (carToDelete);
-        let clearArr = carsService.deleteCar(req.params);
+        let clearArr = carsService.deleteCar(carToDelete);
         res.render('cars', {arr: clearArr})
     }
 };
